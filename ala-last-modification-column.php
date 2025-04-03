@@ -21,6 +21,7 @@ function ala_custom_add_last_modified_column($columns)
     return $columns;
 }
 add_filter('manage_pages_columns', 'ala_custom_add_last_modified_column');
+add_filter('manage_posts_columns', 'ala_custom_add_last_modified_column');
 
 function ala_custom_show_last_modified_column($column_name, $post_id)
 {
@@ -30,6 +31,7 @@ function ala_custom_show_last_modified_column($column_name, $post_id)
     }
 }
 add_action('manage_pages_custom_column', 'ala_custom_show_last_modified_column', 10, 2);
+add_action('manage_posts_custom_column', 'ala_custom_show_last_modified_column', 10, 2);
 
 
 function ala_custom_make_last_modified_column_sortable($sortable_columns)
@@ -38,6 +40,7 @@ function ala_custom_make_last_modified_column_sortable($sortable_columns)
     return $sortable_columns;
 }
 add_filter('manage_edit-page_sortable_columns', 'ala_custom_make_last_modified_column_sortable');
+add_filter('manage_edit-post_sortable_columns', 'ala_custom_make_last_modified_column_sortable');
 
 
 function ala_custom_orderby_last_modified_column($query)
